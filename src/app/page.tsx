@@ -21,9 +21,10 @@ function TopStatusBar() {
 function Sidebar() {
   const links = ['Home', 'Skills', 'Request a Skill', 'Method', 'Field Notes', 'Glossary'];
   return (
-    <aside className="w-full lg:w-[280px] border-r border-black p-6 flex flex-col justify-between shrink-0 bg-[#f5f5f5]">
-      <div>
-        <div className="border-b border-black pb-2 mb-6">
+    <aside className="w-full lg:w-[280px] border-r border-black p-6 flex flex-col justify-between shrink-0 bg-[#f5f5f5] bg-grid-pattern relative">
+      <div className="absolute inset-0 bg-white/50 pointer-events-none" /> {/* fades the grid slightly */}
+      <div className="relative z-10">
+        <div className="border-b border-black pb-2 mb-6 accent-line-bottom">
           <h2 className="text-xl">INDEX</h2>
         </div>
         <nav className="space-y-1">
@@ -48,8 +49,8 @@ function Sidebar() {
 
 function HeroPanel() {
   return (
-    <section id="home" className="mb-16">
-      <div className="border-b border-black pb-2 mb-8 flex justify-between items-end">
+    <section id="home" className="mb-16 relative">
+      <div className="border-b border-black pb-2 mb-8 flex justify-between items-end accent-line-bottom">
         <h2 className="text-2xl">OVERVIEW</h2>
         <span className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase bg-black text-white">PRIMARY NODE</span>
       </div>
@@ -88,9 +89,9 @@ function MetricsGrid() {
     <section className="mb-16">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {metrics.map((m, i) => (
-          <div key={i} className="border border-black bg-white p-4 flex flex-col justify-between h-32">
+          <div key={i} className="border border-black bg-white p-4 flex flex-col justify-between h-32 relative crosshair crosshair-tl crosshair-br">
             <div className="font-mono text-[10px] uppercase text-secondary-text">{m.label}</div>
-            <div className="font-serif text-4xl font-bold">{m.value}</div>
+            <div className="font-serif text-4xl font-bold text-accent-primary">{m.value}</div>
           </div>
         ))}
       </div>
@@ -150,14 +151,14 @@ function FeaturedSkills() {
 
   return (
     <section id="skills" className="mb-16">
-      <div className="border-b border-black pb-2 mb-8 flex justify-between items-end">
+      <div className="border-b border-black pb-2 mb-8 flex justify-between items-end accent-line-bottom">
         <h2 className="text-2xl">FEATURED SKILLS</h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map((skill, i) => (
-          <div key={i} className="card flex flex-col">
+          <div key={i} className="card flex flex-col relative crosshair crosshair-tr crosshair-bl">
             <div className="flex justify-between items-start mb-4">
-              <div className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase">
+              <div className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase bg-accent-primary text-white">
                 {skill.status}
               </div>
               <div className="font-mono text-[10px] text-right text-secondary-text">
@@ -197,7 +198,7 @@ function LiveFeed() {
       
       <div className="font-mono text-xs space-y-4 mb-8">
         {feedItems.map((item, i) => (
-          <div key={i} className={`flex flex-col ${item.highlight ? 'text-accent-orange' : ''}`}>
+          <div key={i} className={`flex flex-col ${item.highlight ? 'text-accent-primary' : ''}`}>
             <span className="opacity-60 mb-0.5">[{item.time}] {item.action}:</span>
             <span>{item.detail}</span>
           </div>
@@ -257,11 +258,11 @@ function RequestSkillSection() {
       <form className="border border-black bg-white p-6 space-y-6 max-w-2xl">
         <div>
           <label className="block font-mono text-xs uppercase mb-2">Topic</label>
-          <input type="text" className="w-full border border-black p-2 bg-[#f5f5f5] font-sans outline-none focus:border-accent-orange" placeholder="e.g. Negotiating a commercial lease" />
+          <input type="text" className="w-full border border-black p-2 bg-[#f5f5f5] font-sans outline-none focus:border-accent-primary" placeholder="e.g. Negotiating a commercial lease" />
         </div>
         <div>
           <label className="block font-mono text-xs uppercase mb-2">Desired Outcome</label>
-          <textarea className="w-full border border-black p-2 bg-[#f5f5f5] font-sans outline-none focus:border-accent-orange h-24" placeholder="What should the user be able to do?" />
+          <textarea className="w-full border border-black p-2 bg-[#f5f5f5] font-sans outline-none focus:border-accent-primary h-24" placeholder="What should the user be able to do?" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
@@ -311,8 +312,8 @@ function FieldNotes() {
       </div>
       <div className="space-y-4">
         {notes.map((note, i) => (
-          <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between border border-black bg-white p-4 hover:border-accent-orange cursor-pointer transition-colors group">
-            <h3 className="text-lg font-serif group-hover:text-accent-orange transition-colors mb-2 sm:mb-0">{note.title}</h3>
+          <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between border border-black bg-white p-4 hover:border-accent-primary cursor-pointer transition-colors group">
+            <h3 className="text-lg font-serif group-hover:text-accent-primary transition-colors mb-2 sm:mb-0">{note.title}</h3>
             <div className="font-mono text-xs text-secondary-text">{note.date}</div>
           </div>
         ))}
@@ -350,7 +351,7 @@ function GlossaryPreview() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col font-sans selection:bg-accent-orange selection:text-white">
+    <div className="min-h-screen flex flex-col font-sans selection:bg-accent-primary selection:text-white">
       <TopStatusBar />
       
       <div className="flex flex-col lg:flex-row flex-grow">

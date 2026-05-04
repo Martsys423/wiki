@@ -18,7 +18,7 @@
   }
 
   .nav-link.active {
-    @apply text-accent-orange;
+    @apply text-accent-primary;
   }
 
   .btn {
@@ -26,7 +26,7 @@
   }
 
   .card {
-    @apply border border-black bg-white p-4 transition-all duration-200 hover:border-2 hover:-m-[1px] hover:border-accent-orange;
+    @apply border border-black bg-white p-4 transition-all duration-200 hover:border-2 hover:-m-[1px] hover:border-accent-primary;
   }
 }
 
@@ -60,3 +60,45 @@
   background: #000;
   border: 2px solid #f5f5f5;
 }
+
+/* Line Graphics & Retro Accents */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, #e5e5e5 1px, transparent 1px),
+                    linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.crosshair {
+  position: relative;
+}
+.crosshair::before,
+.crosshair::after {
+  content: '';
+  position: absolute;
+  background-color: var(--accent-primary);
+}
+.crosshair-tl::before { top: -4px; left: -1px; width: 8px; height: 1px; }
+.crosshair-tl::after { top: -1px; left: -4px; width: 1px; height: 8px; }
+
+.crosshair-tr::before { top: -4px; right: -1px; width: 8px; height: 1px; }
+.crosshair-tr::after { top: -1px; right: -4px; width: 1px; height: 8px; }
+
+.crosshair-bl::before { bottom: -4px; left: -1px; width: 8px; height: 1px; }
+.crosshair-bl::after { bottom: -1px; left: -4px; width: 1px; height: 8px; }
+
+.crosshair-br::before { bottom: -4px; right: -1px; width: 8px; height: 1px; }
+.crosshair-br::after { bottom: -1px; right: -4px; width: 1px; height: 8px; }
+
+.accent-line-bottom {
+  position: relative;
+}
+.accent-line-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 30%;
+  height: 2px;
+  background-color: var(--accent-primary);
+}
+
