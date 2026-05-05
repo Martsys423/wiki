@@ -22,11 +22,11 @@
   }
 
   .btn {
-    @apply bg-black text-white px-5 py-2.5 font-mono text-sm font-bold uppercase cursor-pointer flex items-center justify-between hover:bg-neutral-800 transition-colors w-full border border-black;
+    @apply bg-black text-white px-5 py-2.5 font-mono text-sm font-bold uppercase cursor-pointer flex items-center justify-between transition-none w-full border border-black hover:bg-white hover:text-black;
   }
 
   .card {
-    @apply border border-black bg-white p-4 transition-all duration-200 hover:border-2 hover:-m-[1px] hover:border-accent-primary;
+    @apply border border-black bg-white p-4 transition-none cursor-pointer hover:bg-black hover:text-white;
   }
 }
 

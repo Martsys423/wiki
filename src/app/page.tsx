@@ -69,7 +69,7 @@ function HeroPanel() {
           EXPLORE SKILLS
           <span>→</span>
         </button>
-        <button className="btn !bg-white !text-black hover:!bg-gray-100">
+        <button className="btn !bg-white !text-black hover:!bg-black hover:!text-white">
           REQUEST A SKILL
         </button>
       </div>
@@ -159,18 +159,18 @@ function FeaturedSkills() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map((skill, i) => (
-          <div key={i} className="card flex flex-col relative crosshair crosshair-tr crosshair-bl">
+          <div key={i} className="card group flex flex-col relative crosshair crosshair-tr crosshair-bl">
             <div className="flex justify-between items-start mb-4">
-              <div className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase bg-accent-primary text-white">
+              <div className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase bg-accent-primary text-white group-hover:bg-white group-hover:text-black transition-none">
                 {skill.status}
               </div>
-              <div className="font-mono text-[10px] text-right text-secondary-text">
+              <div className="font-mono text-[10px] text-right text-secondary-text group-hover:text-gray-400">
                 {skill.sources} SOURCES<br/>
                 REV: {skill.lastReviewed}
               </div>
             </div>
             <h3 className="text-xl mb-2">{skill.name}</h3>
-            <p className="text-sm text-secondary-text mb-6 flex-grow">{skill.promise}</p>
+            <p className="text-sm text-secondary-text mb-6 flex-grow group-hover:text-gray-300">{skill.promise}</p>
             <button className="btn mt-auto text-sm py-1.5">
               OPEN SKILL
               <span>→</span>
@@ -315,9 +315,9 @@ function FieldNotes() {
       </div>
       <div className="space-y-4">
         {notes.map((note, i) => (
-          <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between border border-black bg-white p-4 hover:border-accent-primary cursor-pointer transition-colors group">
-            <h3 className="text-lg font-mono group-hover:text-accent-primary transition-colors mb-2 sm:mb-0">{note.title}</h3>
-            <div className="font-mono text-xs text-secondary-text">{note.date}</div>
+          <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between border border-black bg-white p-4 hover:bg-black hover:text-white cursor-pointer transition-none group">
+            <h3 className="text-lg font-mono transition-none mb-2 sm:mb-0">{note.title}</h3>
+            <div className="font-mono text-xs text-secondary-text group-hover:text-gray-400">{note.date}</div>
           </div>
         ))}
       </div>
