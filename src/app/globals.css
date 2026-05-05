@@ -102,3 +102,18 @@
   background-color: var(--accent-primary);
 }
 
+/* Terminal Effects */
+.blinking-cursor::after {
+  content: '█';
+  animation: blink 1s step-start infinite;
+  color: var(--accent-primary);
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+

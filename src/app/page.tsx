@@ -5,7 +5,7 @@ import React from 'react';
 function TopStatusBar() {
   return (
     <div className="bg-black text-white px-4 py-2 flex justify-between items-center font-mono text-xs uppercase border-b border-black">
-      <div>SYSTEM: LIVING SKILLS // VERSION: 0.1.0</div>
+      <div className="blinking-cursor">SYSTEM: LIVING SKILLS // VERSION: 0.1.0</div>
       <div className="flex items-center gap-4">
         <div className="hidden md:block">SOURCE INDEX ONLINE</div>
         <div className="live-pulse">
@@ -79,10 +79,10 @@ function HeroPanel() {
 
 function MetricsGrid() {
   const metrics = [
-    { label: 'SKILLS LIVE', value: '20' },
-    { label: 'SOURCES REVIEWED', value: '1,240' },
-    { label: 'UPDATED THIS WEEK', value: '7' },
-    { label: 'TEST CASES PASSED', value: '384' },
+    { label: 'SKILLS LIVE', value: '20', ascii: '[██████░░░░]' },
+    { label: 'SOURCES REVIEWED', value: '1,240', ascii: '[█████████░]' },
+    { label: 'UPDATED THIS WEEK', value: '7', ascii: '[███░░░░░░░]' },
+    { label: 'TEST CASES PASSED', value: '384', ascii: '[████████░░]' },
   ];
 
   return (
@@ -91,7 +91,10 @@ function MetricsGrid() {
         {metrics.map((m, i) => (
           <div key={i} className="border border-black bg-white p-4 flex flex-col justify-between h-32 relative crosshair crosshair-tl crosshair-br">
             <div className="font-mono text-[10px] uppercase text-secondary-text">{m.label}</div>
-            <div className="font-mono text-4xl font-bold text-accent-primary">{m.value}</div>
+            <div>
+              <div className="font-mono text-[10px] text-accent-primary mb-1 tracking-widest">{m.ascii}</div>
+              <div className="font-mono text-4xl font-bold text-accent-primary">{m.value}</div>
+            </div>
           </div>
         ))}
       </div>
@@ -192,7 +195,7 @@ function LiveFeed() {
   return (
     <aside className="w-full lg:w-[320px] border-l border-black p-6 shrink-0 bg-[#f5f5f5]">
       <div className="border-b border-black pb-2 mb-6 flex justify-between items-end">
-        <h2 className="text-xl">RECENT</h2>
+        <h2 className="text-xl blinking-cursor">RECENT</h2>
         <span className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase text-accent-red border-accent-red">LIVE FEED</span>
       </div>
       
