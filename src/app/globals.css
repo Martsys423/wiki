@@ -8,7 +8,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold uppercase tracking-tight;
+    @apply font-mono font-bold uppercase tracking-tight;
   }
 }
 
@@ -22,7 +22,7 @@
   }
 
   .btn {
-    @apply bg-black text-white px-5 py-2.5 font-serif text-base font-bold uppercase cursor-pointer flex items-center justify-between hover:bg-neutral-800 transition-colors w-full border border-black;
+    @apply bg-black text-white px-5 py-2.5 font-mono text-sm font-bold uppercase cursor-pointer flex items-center justify-between hover:bg-neutral-800 transition-colors w-full border border-black;
   }
 
   .card {

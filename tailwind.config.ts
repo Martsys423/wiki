@@ -17,7 +17,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        serif: ["EB Garamond", "serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
     },

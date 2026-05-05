@@ -91,7 +91,7 @@ function MetricsGrid() {
         {metrics.map((m, i) => (
           <div key={i} className="border border-black bg-white p-4 flex flex-col justify-between h-32 relative crosshair crosshair-tl crosshair-br">
             <div className="font-mono text-[10px] uppercase text-secondary-text">{m.label}</div>
-            <div className="font-serif text-4xl font-bold text-accent-primary">{m.value}</div>
+            <div className="font-mono text-4xl font-bold text-accent-primary">{m.value}</div>
           </div>
         ))}
       </div>
@@ -103,7 +103,7 @@ function MissionStatement() {
   return (
     <section className="mb-16 p-8 border border-black bg-white">
       <div className="font-mono text-[10px] uppercase mb-4 border-b border-black pb-2 inline-block">MISSION STATEMENT</div>
-      <p className="text-xl lg:text-2xl leading-relaxed font-serif">
+      <p className="text-xl lg:text-2xl leading-relaxed font-mono">
         We turn authoritative resources into practical, versioned skills that help people make better decisions, complete complex tasks, and work with AI systems they can trust.
       </p>
     </section>
@@ -313,7 +313,7 @@ function FieldNotes() {
       <div className="space-y-4">
         {notes.map((note, i) => (
           <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between border border-black bg-white p-4 hover:border-accent-primary cursor-pointer transition-colors group">
-            <h3 className="text-lg font-serif group-hover:text-accent-primary transition-colors mb-2 sm:mb-0">{note.title}</h3>
+            <h3 className="text-lg font-mono group-hover:text-accent-primary transition-colors mb-2 sm:mb-0">{note.title}</h3>
             <div className="font-mono text-xs text-secondary-text">{note.date}</div>
           </div>
         ))}

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { EB_Garamond, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const serif = EB_Garamond({ subsets: ["latin"], variable: "--font-eb-garamond" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
 
 export const metadata: Metadata = {
@@ -17,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
       <body className={`${sans.className} min-h-screen bg-background text-foreground antialiased`}>
         {children}
       </body>
