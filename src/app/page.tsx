@@ -49,20 +49,35 @@ function Sidebar() {
 
 function HeroPanel() {
   return (
-    <section id="home" className="mb-16 relative">
-      <div className="border-b border-black pb-2 mb-8 flex justify-between items-end accent-line-bottom">
-        <h2 className="text-2xl">OVERVIEW</h2>
-        <span className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase bg-black text-white">PRIMARY NODE</span>
+    <section id="home" className="mb-16 relative overflow-hidden">
+      {/* Background Wireframe Graphic */}
+      <div className="absolute right-0 -top-10 w-[400px] h-[400px] opacity-10 z-0 pointer-events-none animate-spin-slow mix-blend-multiply">
+        <svg viewBox="0 0 100 100" className="w-full h-full stroke-black fill-none" strokeWidth="0.5">
+          <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" />
+          <path d="M50 10 L50 50 L90 30" />
+          <path d="M10 30 L50 50 L50 90" />
+          {/* Inner geometry */}
+          <path d="M30 40 L50 50 L70 40 L50 30 Z" />
+          <path d="M30 40 L30 60 L50 70 L50 50 Z" />
+          <path d="M70 40 L70 60 L50 70 L50 50 Z" />
+        </svg>
       </div>
-      
-      <h1 className="text-5xl lg:text-7xl mb-6 leading-[0.9]">
-        LIVING SKILLS<br />
-        FOR PEOPLE & AGENTS
-      </h1>
-      
-      <p className="text-lg lg:text-xl text-secondary-text max-w-2xl mb-8 leading-relaxed font-sans">
-        Maintained, cited, tested knowledge systems that turn trusted sources into practical workflows.
-      </p>
+
+      <div className="relative z-10">
+        <div className="border-b border-black pb-2 mb-8 flex justify-between items-end accent-line-bottom">
+          <h2 className="text-2xl">OVERVIEW</h2>
+          <span className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase bg-black text-white">PRIMARY NODE</span>
+        </div>
+        
+        <h1 className="text-5xl lg:text-7xl mb-6 leading-[0.9]">
+          LIVING SKILLS<br />
+          FOR PEOPLE & AGENTS
+        </h1>
+        
+        <p className="text-lg lg:text-xl text-secondary-text max-w-2xl mb-8 leading-relaxed font-mono bg-[#f5f5f5]/80 inline-block">
+          Maintained, cited, tested knowledge systems that turn trusted sources into practical workflows.
+        </p>
+      </div>
 
       <div className="flex flex-col sm:flex-row gap-4 max-w-md relative">
         <button className="btn relative z-10">
