@@ -79,10 +79,10 @@ function HeroPanel() {
 
 function MetricsGrid() {
   const metrics = [
-    { label: 'SKILLS LIVE', value: '20', ascii: '[██████░░░░]' },
-    { label: 'SOURCES REVIEWED', value: '1,240', ascii: '[█████████░]' },
-    { label: 'UPDATED THIS WEEK', value: '7', ascii: '[███░░░░░░░]' },
-    { label: 'TEST CASES PASSED', value: '384', ascii: '[████████░░]' },
+    { label: 'SKILLS LIVE', value: '20', ascii: '[██████░░░░]', points: '0,15 10,10 20,18 30,5 40,12 50,2 60,8' },
+    { label: 'SOURCES REVIEWED', value: '1,240', ascii: '[█████████░]', points: '0,18 15,12 25,16 35,4 45,8 60,2' },
+    { label: 'UPDATED THIS WEEK', value: '7', ascii: '[███░░░░░░░]', points: '0,5 10,15 20,8 30,12 40,4 50,18 60,10' },
+    { label: 'TEST CASES PASSED', value: '384', ascii: '[████████░░]', points: '0,10 15,5 30,15 45,2 60,12' },
   ];
 
   return (
@@ -90,7 +90,12 @@ function MetricsGrid() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {metrics.map((m, i) => (
           <div key={i} className="border border-black bg-white p-4 flex flex-col justify-between h-32 relative crosshair crosshair-tl crosshair-br">
-            <div className="font-mono text-[10px] uppercase text-secondary-text">{m.label}</div>
+            <div className="font-mono text-[10px] uppercase text-secondary-text flex justify-between">
+              {m.label}
+              <svg width="40" height="12" viewBox="0 0 60 20" className="stroke-black fill-none opacity-50" strokeWidth="2">
+                <polyline points={m.points} />
+              </svg>
+            </div>
             <div>
               <div className="font-mono text-[10px] text-accent-primary mb-1 tracking-widest">{m.ascii}</div>
               <div className="font-mono text-4xl font-bold text-accent-primary">{m.value}</div>
@@ -171,10 +176,17 @@ function FeaturedSkills() {
             </div>
             <h3 className="text-xl mb-2">{skill.name}</h3>
             <p className="text-sm text-secondary-text mb-6 flex-grow group-hover:text-gray-300">{skill.promise}</p>
-            <button className="btn mt-auto text-sm py-1.5">
-              OPEN SKILL
-              <span>→</span>
-            </button>
+            
+            <div className="flex justify-between items-end mt-auto pt-4 border-t border-black group-hover:border-white">
+              <div className="flex h-5 gap-[1px] items-end opacity-80">
+                {[...Array(15)].map((_, j) => (
+                  <div key={j} className="bg-black group-hover:bg-white" style={{ width: `${((j * 7) % 3) + 1}px`, height: `${100 - (j % 4) * 15}%` }} />
+                ))}
+              </div>
+              <button className="font-mono text-sm font-bold uppercase hover:underline">
+                OPEN SKILL →
+              </button>
+            </div>
           </div>
         ))}
       </div>
@@ -217,33 +229,25 @@ function LiveFeed() {
 }
 
 function MethodSection() {
-  const elements = [
-    'Curated source library',
-    'Living wiki',
-    'Workflow instructions',
-    'Test cases',
-    'Changelog',
-    'Human review layer',
-    'User-facing interface',
-    'Agent-ready package'
-  ];
-
   return (
-    <section id="method" className="mb-16 border border-black bg-white p-8">
+    <section id="method" className="mb-16 border border-black bg-white p-8 relative crosshair crosshair-tl crosshair-br">
       <div className="border-b border-black pb-2 mb-6">
         <h2 className="text-2xl">THE LIVING SKILL STANDARD</h2>
       </div>
       <p className="mb-6 font-mono text-sm text-secondary-text">
-        OPERATIONAL CHECKLIST // EVERY SKILL INCLUDES:
+        OPERATIONAL ARCHITECTURE // NODE GRAPH
       </p>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 font-mono text-sm">
-        {elements.map((el, i) => (
-          <li key={i} className="flex items-center gap-3">
-            <div className="w-3 h-3 border border-black flex items-center justify-center bg-black text-white text-[8px]">✓</div>
-            {el.toUpperCase()}
-          </li>
-        ))}
-      </ul>
+      
+      <div className="bg-[#f5f5f5] p-6 border border-black font-mono text-xs overflow-x-auto">
+        <pre className="leading-tight">
+{` [ RAW SOURCE ] ──> | KNOWLEDGE CRAWLER | ──> | CLAIM AUDIT | ──> [ SKILL DRAFT ]
+        │                    │                       │                  │
+        │                 (tests)               (human rev)             │
+        │                    │                       │                  │
+        V                    V                       V                  V
+ [ SOURCE GRAPH ] <── [ LIVING WIKI ] <─── [ AGENT PACKAGE ] <── [ DEPLOYMENT ]`}
+        </pre>
+      </div>
     </section>
   );
 }
