@@ -51,15 +51,20 @@ function HeroPanel() {
   return (
     <section id="home" className="mb-16 relative overflow-hidden">
       {/* Background Wireframe Graphic */}
-      <div className="absolute right-0 -top-10 w-[400px] h-[400px] opacity-10 z-0 pointer-events-none animate-spin-slow mix-blend-multiply">
-        <svg viewBox="0 0 100 100" className="w-full h-full stroke-black fill-none" strokeWidth="0.5">
-          <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" />
-          <path d="M50 10 L50 50 L90 30" />
-          <path d="M10 30 L50 50 L50 90" />
-          {/* Inner geometry */}
-          <path d="M30 40 L50 50 L70 40 L50 30 Z" />
-          <path d="M30 40 L30 60 L50 70 L50 50 Z" />
-          <path d="M70 40 L70 60 L50 70 L50 50 Z" />
+      <div className="absolute right-0 -top-10 w-[500px] h-[500px] opacity-10 z-0 pointer-events-none animate-spin-slow mix-blend-multiply">
+        <svg viewBox="0 0 100 100" className="w-full h-full stroke-black fill-none" strokeWidth="0.2">
+          {/* Outer tracking ring */}
+          <circle cx="50" cy="50" r="45" strokeDasharray="2 4" />
+          <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
+          {/* Inner orbital paths */}
+          <ellipse cx="50" cy="50" rx="40" ry="12" transform="rotate(30 50 50)" />
+          <ellipse cx="50" cy="50" rx="40" ry="12" transform="rotate(-30 50 50)" />
+          <ellipse cx="50" cy="50" rx="40" ry="12" transform="rotate(90 50 50)" />
+          {/* Crosshairs */}
+          <line x1="5" y1="50" x2="95" y2="50" strokeWidth="0.5" />
+          <line x1="50" y1="5" x2="50" y2="95" strokeWidth="0.5" />
+          {/* Core node */}
+          <circle cx="50" cy="50" r="4" fill="black" />
         </svg>
       </div>
 
@@ -225,7 +230,7 @@ function LiveFeed() {
   return (
     <aside className="w-full lg:w-[320px] border-l border-black p-6 shrink-0 bg-[#f5f5f5]">
       <div className="border-b border-black pb-2 mb-6 flex justify-between items-end">
-        <h2 className="text-xl blinking-cursor">RECENT</h2>
+        <h2 className="text-xl">RECENT</h2>
         <span className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase text-accent-red border-accent-red">LIVE FEED</span>
       </div>
       
