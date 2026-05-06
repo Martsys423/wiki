@@ -64,14 +64,16 @@ function HeroPanel() {
         Maintained, cited, tested knowledge systems that turn trusted sources into practical workflows.
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-        <button className="btn">
+      <div className="flex flex-col sm:flex-row gap-4 max-w-md relative">
+        <button className="btn relative z-10">
           EXPLORE SKILLS
           <span>→</span>
         </button>
-        <button className="btn !bg-white !text-black hover:!bg-black hover:!text-white">
+        <button className="btn !bg-white !text-black hover:!bg-black hover:!text-white relative z-10">
           REQUEST A SKILL
         </button>
+        {/* Wiring connection down to Metrics */}
+        <div className="absolute left-1/4 -bottom-16 w-px h-16 border-l border-dashed border-black z-0 opacity-50 hidden md:block"></div>
       </div>
     </section>
   );
@@ -103,17 +105,23 @@ function MetricsGrid() {
           </div>
         ))}
       </div>
+      {/* Wiring connection down to Mission Statement */}
+      <div className="relative">
+        <div className="absolute left-1/4 h-16 w-px border-l border-dashed border-black opacity-50 hidden md:block"></div>
+      </div>
     </section>
   );
 }
 
 function MissionStatement() {
   return (
-    <section className="mb-16 p-8 border border-black bg-white">
+    <section className="mb-16 p-8 border border-black bg-white relative">
       <div className="font-mono text-[10px] uppercase mb-4 border-b border-black pb-2 inline-block">MISSION STATEMENT</div>
       <p className="text-xl lg:text-2xl leading-relaxed font-mono">
         We turn authoritative resources into practical, versioned skills that help people make better decisions, complete complex tasks, and work with AI systems they can trust.
       </p>
+      {/* Wiring connection down to Skills */}
+      <div className="absolute left-1/4 -bottom-16 w-px h-16 border-l border-dashed border-black opacity-50 hidden md:block"></div>
     </section>
   );
 }
@@ -177,12 +185,7 @@ function FeaturedSkills() {
             <h3 className="text-xl mb-2">{skill.name}</h3>
             <p className="text-sm text-secondary-text mb-6 flex-grow group-hover:text-gray-300">{skill.promise}</p>
             
-            <div className="flex justify-between items-end mt-auto pt-4 border-t border-black group-hover:border-white">
-              <div className="flex h-5 gap-[1px] items-end opacity-80">
-                {[...Array(15)].map((_, j) => (
-                  <div key={j} className="bg-black group-hover:bg-white" style={{ width: `${((j * 7) % 3) + 1}px`, height: `${100 - (j % 4) * 15}%` }} />
-                ))}
-              </div>
+            <div className="flex justify-end items-end mt-auto pt-4 border-t border-black group-hover:border-white">
               <button className="font-mono text-sm font-bold uppercase hover:underline">
                 OPEN SKILL →
               </button>
