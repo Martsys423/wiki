@@ -50,21 +50,17 @@ function Sidebar() {
 function HeroPanel() {
   return (
     <section id="home" className="mb-16 relative overflow-hidden">
-      {/* Background Wireframe Graphic */}
-      <div className="absolute right-0 -top-10 w-[500px] h-[500px] opacity-10 z-0 pointer-events-none animate-spin-slow mix-blend-multiply">
-        <svg viewBox="0 0 100 100" className="w-full h-full stroke-black fill-none" strokeWidth="0.2">
-          {/* Outer tracking ring */}
-          <circle cx="50" cy="50" r="45" strokeDasharray="2 4" />
-          <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
-          {/* Inner orbital paths */}
-          <ellipse cx="50" cy="50" rx="40" ry="12" transform="rotate(30 50 50)" />
-          <ellipse cx="50" cy="50" rx="40" ry="12" transform="rotate(-30 50 50)" />
-          <ellipse cx="50" cy="50" rx="40" ry="12" transform="rotate(90 50 50)" />
-          {/* Crosshairs */}
-          <line x1="5" y1="50" x2="95" y2="50" strokeWidth="0.5" />
-          <line x1="50" y1="5" x2="50" y2="95" strokeWidth="0.5" />
-          {/* Core node */}
-          <circle cx="50" cy="50" r="4" fill="black" />
+      {/* Background Graphic - Static Radar Crosshair */}
+      <div className="absolute right-0 -top-10 w-[500px] h-[500px] opacity-[0.05] z-0 pointer-events-none mix-blend-multiply">
+        <svg viewBox="0 0 100 100" className="w-full h-full stroke-black fill-none" strokeWidth="0.5">
+          {/* Main targeting rings */}
+          <circle cx="50" cy="50" r="40" />
+          <circle cx="50" cy="50" r="38" strokeWidth="0.2" />
+          {/* Intersecting lines */}
+          <line x1="0" y1="50" x2="100" y2="50" />
+          <line x1="50" y1="0" x2="50" y2="100" />
+          {/* Center node */}
+          <circle cx="50" cy="50" r="1.5" fill="black" />
         </svg>
       </div>
 
