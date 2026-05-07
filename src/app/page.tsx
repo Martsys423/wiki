@@ -97,10 +97,10 @@ function HeroPanel() {
 
 function MetricsGrid() {
   const metrics = [
-    { label: 'SKILLS LIVE', value: '20', ascii: '[██████░░░░]', points: '0,15 10,10 20,18 30,5 40,12 50,2 60,8' },
-    { label: 'SOURCES REVIEWED', value: '1,240', ascii: '[█████████░]', points: '0,18 15,12 25,16 35,4 45,8 60,2' },
-    { label: 'UPDATED THIS WEEK', value: '7', ascii: '[███░░░░░░░]', points: '0,5 10,15 20,8 30,12 40,4 50,18 60,10' },
-    { label: 'TEST CASES PASSED', value: '384', ascii: '[████████░░]', points: '0,10 15,5 30,15 45,2 60,12' },
+    { label: 'SKILLS LIVE', value: '20', progress: 6 },
+    { label: 'SOURCES REVIEWED', value: '1,240', progress: 9 },
+    { label: 'UPDATED THIS WEEK', value: '7', progress: 3 },
+    { label: 'TEST CASES PASSED', value: '384', progress: 8 },
   ];
 
   return (
@@ -108,14 +108,15 @@ function MetricsGrid() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {metrics.map((m, i) => (
           <div key={i} className="border border-black bg-white p-4 flex flex-col justify-between h-32 relative crosshair crosshair-tl crosshair-br">
-            <div className="font-mono text-[10px] uppercase text-secondary-text flex justify-between">
+            <div className="font-mono text-[10px] uppercase text-secondary-text">
               {m.label}
-              <svg width="40" height="12" viewBox="0 0 60 20" className="stroke-black fill-none opacity-50" strokeWidth="2">
-                <polyline points={m.points} />
-              </svg>
             </div>
             <div>
-              <div className="font-mono text-[10px] text-accent-primary mb-1 tracking-widest">{m.ascii}</div>
+              <div className="flex gap-[2px] h-2 w-24 mb-2 opacity-80">
+                {[...Array(10)].map((_, j) => (
+                  <div key={j} className={`flex-1 ${j < m.progress ? 'bg-black' : 'bg-gray-200'}`} />
+                ))}
+              </div>
               <div className="font-mono text-4xl font-bold text-accent-primary">{m.value}</div>
             </div>
           </div>
