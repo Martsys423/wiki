@@ -117,7 +117,7 @@ function MetricsGrid() {
                   <div key={j} className={`flex-1 ${j < m.progress ? 'bg-black' : 'bg-gray-200'}`} />
                 ))}
               </div>
-              <div className="font-mono text-4xl font-bold text-accent-primary">{m.value}</div>
+              <div className="font-sans text-4xl font-bold text-accent-primary tracking-tight">{m.value}</div>
             </div>
           </div>
         ))}
