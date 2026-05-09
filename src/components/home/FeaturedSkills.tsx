@@ -10,7 +10,7 @@ export default function FeaturedSkills() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skillsData.map((skill, i) => (
-          <Card key={i} crosshairs={['tr', 'bl']} className="group flex flex-col">
+          <Card key={i} crosshairs={['tr', 'bl']} hoverable className="group flex flex-col">
             <div className="flex justify-between items-start mb-4">
               <Badge variant="inverted-hover">
                 {skill.status}
