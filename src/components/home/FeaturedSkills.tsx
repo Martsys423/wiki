@@ -1,4 +1,6 @@
 import { skillsData } from '../../data/mockData';
+import Card from '../ui/Card';
+import Badge from '../ui/Badge';
 
 export default function FeaturedSkills() {
   return (
@@ -8,11 +10,11 @@ export default function FeaturedSkills() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skillsData.map((skill, i) => (
-          <div key={i} className="card group flex flex-col relative crosshair crosshair-tr crosshair-bl">
+          <Card key={i} crosshairs={['tr', 'bl']} className="group flex flex-col">
             <div className="flex justify-between items-start mb-4">
-              <div className="font-mono text-[10px] px-2 py-0.5 border border-black uppercase bg-accent-primary text-white group-hover:bg-white group-hover:text-black transition-none">
+              <Badge variant="inverted-hover">
                 {skill.status}
-              </div>
+              </Badge>
               <div className="font-mono text-[10px] text-right text-secondary-text group-hover:text-gray-400">
                 {skill.sources} SOURCES<br/>
                 REV: {skill.lastReviewed}
@@ -26,7 +28,7 @@ export default function FeaturedSkills() {
                 OPEN SKILL →
               </button>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
     </section>

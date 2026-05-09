@@ -1,6 +1,8 @@
+import Card from '../ui/Card';
+
 export default function MethodSection() {
   return (
-    <section id="method" className="mb-16 border border-black bg-white p-8 relative crosshair crosshair-tl crosshair-br">
+    <Card id="method" crosshairs={['tl', 'br']} className="mb-16 p-8">
       <div className="border-b border-black pb-2 mb-6">
         <h2 className="text-2xl">THE LIVING SKILL STANDARD</h2>
       </div>
@@ -18,6 +20,6 @@ export default function MethodSection() {
  [ SOURCE GRAPH ] <── [ LIVING WIKI ] <─── [ AGENT PACKAGE ] <── [ DEPLOYMENT ]`}
         </pre>
       </div>
-    </section>
+    </Card>
   );
 }

@@ -1,3 +1,5 @@
+import Button from '../ui/Button';
+
 export default function RequestSkillSection() {
   return (
     <section id="request-a-skill" className="mb-16">
@@ -41,10 +43,9 @@ export default function RequestSkillSection() {
           <input type="checkbox" id="regulated" className="w-4 h-4 border-black rounded-none" />
           <label htmlFor="regulated" className="font-mono text-xs uppercase">Is this legal, medical, financial, or regulated?</label>
         </div>
-        <button type="button" className="btn max-w-xs">
+        <Button type="button" className="max-w-xs" hasArrow>
           QUEUE REQUEST
-          <span>→</span>
-        </button>
+        </Button>
       </form>
     </section>
   );

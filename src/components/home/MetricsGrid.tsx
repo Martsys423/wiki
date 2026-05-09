@@ -1,11 +1,12 @@
 import { metricsData } from '../../data/mockData';
+import Card from '../ui/Card';
 
 export default function MetricsGrid() {
   return (
     <section className="mb-16">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {metricsData.map((m, i) => (
-          <div key={i} className="border border-black bg-white p-4 flex flex-col justify-between h-32 relative crosshair crosshair-tl crosshair-br">
+          <Card key={i} crosshairs={['tl', 'br']} className="flex flex-col justify-between h-32">
             <div className="font-mono text-[10px] uppercase text-secondary-text">
               {m.label}
             </div>
@@ -17,7 +18,7 @@ export default function MetricsGrid() {
               </div>
               <div className="font-sans text-4xl font-bold text-accent-primary tracking-tight">{m.value}</div>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
       {/* Wiring connection down to Mission Statement */}
