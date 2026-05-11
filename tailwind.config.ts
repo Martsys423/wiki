@@ -12,7 +12,7 @@ const config: Config = {
         background: "#f5f5f5",
         foreground: "#000000",
         "secondary-text": "#666666",
-        "accent-primary": "#000000", /* Changed to Monochrome Black */
+        "accent-primary": "#FF4500", /* Safety Orange */
         "accent-red": "#ff0000", /* Keep the LIVE dot red */
       },
       fontFamily: {

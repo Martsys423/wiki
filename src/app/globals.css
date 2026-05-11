@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --accent-primary: #FF4500;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
