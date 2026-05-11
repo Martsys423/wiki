@@ -4,20 +4,6 @@ import Badge from '../ui/Badge';
 export default function HeroPanel() {
   return (
     <section id="home" className="mb-16 relative overflow-hidden">
-      {/* Background Graphic - Static Radar Crosshair */}
-      <div className="absolute right-0 -top-10 w-[500px] h-[500px] opacity-[0.05] z-0 pointer-events-none mix-blend-multiply">
-        <svg viewBox="0 0 100 100" className="w-full h-full stroke-black fill-none" strokeWidth="0.5">
-          {/* Main targeting rings */}
-          <circle cx="50" cy="50" r="40" />
-          <circle cx="50" cy="50" r="38" strokeWidth="0.2" />
-          {/* Intersecting lines */}
-          <line x1="0" y1="50" x2="100" y2="50" />
-          <line x1="50" y1="0" x2="50" y2="100" />
-          {/* Center node */}
-          <circle cx="50" cy="50" r="1.5" fill="black" />
-        </svg>
-      </div>
-
       <div className="relative z-10">
         <div className="border-b border-black pb-2 mb-8 flex justify-between items-end accent-line-bottom">
           <h2 className="text-2xl">OVERVIEW</h2>
