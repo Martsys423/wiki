@@ -16,6 +16,14 @@
   }
 }
 
+html {
+  transition: filter 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+html.invert-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 @layer components {
   .nav-link {
     @apply block py-2 font-bold border-b border-transparent hover:border-black transition-colors;
