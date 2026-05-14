@@ -6,9 +6,10 @@ export default function MetricsGrid() {
     <section className="mb-16">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {metricsData.map((m, i) => (
-          <Card key={i} crosshairs={['tl', 'br']} className="flex flex-col justify-between h-32">
-            <div className="font-mono text-[10px] uppercase text-secondary-text">
-              {m.label}
+          <Card key={i} crosshairs={['tl', 'br']} className="flex flex-col justify-between border-2 border-black h-32">
+            <div className="flex justify-between items-start mb-4">
+              <div className="font-mono text-[10px] uppercase tracking-widest text-secondary-text">{m.label}</div>
+              <div className="text-[10px] font-mono opacity-30">#00{i+1}</div>
             </div>
             <div>
               <div className="flex gap-[2px] h-2 w-24 mb-2 opacity-80">
