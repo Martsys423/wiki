@@ -12,7 +12,7 @@ const config: Config = {
         background: "#f5f5f5",
         foreground: "#000000",
         "secondary-text": "#666666",
-        "accent-primary": "#0057FF", /* Blueprint Blue */
+        "accent-primary": "#004B8D", /* Lighter Technical Navy */
         "accent-red": "#ff0000", /* Keep the LIVE dot red */
       },
       fontFamily: {
