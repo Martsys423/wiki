@@ -7,6 +7,12 @@
     --accent-primary: #004B8D;
   }
 
+  *, ::before, ::after {
+    border-width: 0;
+    border-style: solid;
+    border-color: currentColor;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
