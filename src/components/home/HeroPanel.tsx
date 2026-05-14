@@ -5,15 +5,9 @@ export default function HeroPanel() {
   return (
     <section id="home" className="mb-16 relative overflow-hidden">
       <div className="relative z-10">
-        <div className="border-b-2 border-black pb-2 mb-8 flex justify-between items-end accent-line-bottom">
-          <div className="flex items-center gap-2">
-            <span className="bg-black text-white text-[10px] px-1 font-mono">NODE: 01-A</span>
-            <h2 className="text-2xl">OVERVIEW</h2>
-          </div>
-          <div className="flex flex-col items-end gap-1">
-            <span className="text-[8px] font-mono text-secondary-text tracking-[0.2em] leading-none">LOC: 40.7128° N, 74.0060° W</span>
-            <Badge variant="primary">PRIMARY NODE</Badge>
-          </div>
+        <div className="border-b border-black pb-2 mb-8 flex justify-between items-end accent-line-bottom">
+          <h2 className="text-2xl">OVERVIEW</h2>
+          <Badge variant="primary">PRIMARY NODE</Badge>
         </div>
         
         <h1 className="text-5xl lg:text-7xl mb-6 leading-[0.9]">

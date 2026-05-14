@@ -7,12 +7,6 @@
     --accent-primary: #004B8D;
   }
 
-  *, ::before, ::after {
-    border-width: 0;
-    border-style: solid;
-    border-color: currentColor;
-  }
-
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
@@ -40,11 +34,11 @@ html.invert-mode {
   }
 
   .btn {
-    @apply bg-black text-white px-5 py-2.5 font-mono text-sm font-bold uppercase cursor-pointer flex items-center justify-between transition-none w-full border-2 border-black hover:bg-white hover:text-black;
+    @apply bg-black text-white px-5 py-2.5 font-mono text-sm font-bold uppercase cursor-pointer flex items-center justify-between transition-none w-full border border-black hover:bg-white hover:text-black;
   }
 
   .card {
-    @apply border-2 border-black bg-white p-4 transition-none cursor-pointer hover:bg-black hover:text-white;
+    @apply border border-black bg-white p-4 transition-none cursor-pointer hover:bg-black hover:text-white;
   }
 }
 
