@@ -4,10 +4,10 @@ import Card from '../ui/Card';
 export default function MetricsGrid() {
   return (
     <section className="mb-16">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {metricsData.map((m, i) => (
-          <Card key={i} crosshairs={['tl', 'br']} className="flex flex-col justify-between h-32">
-            <div className="font-mono text-[10px] uppercase text-secondary-text">
+          <Card key={i} crosshairs={['tl', 'br']} className="flex flex-col justify-between h-44 p-6">
+            <div className="font-mono text-[10px] uppercase text-secondary-text tracking-widest">
               {m.label}
             </div>
             <div>
